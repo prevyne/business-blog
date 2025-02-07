@@ -1,13 +1,9 @@
 <?php
 session_start();
 include('../includes/db.php');
-include('auth_check.php'); // Ensure authentication
+include('auth_check.php'); // This ensures only admins can access
 
-// Check if the user is logged in as an admin
-if (!isset($_SESSION['admin_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.php");
-    exit();
-}
+echo "Welcome, " . htmlspecialchars($_SESSION['admin_name']);
 
 // Fetch statistics
 $total_users_sql = "SELECT COUNT(*) AS total_users FROM users";

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../includes/db.php');
-include('auth_check.php');  // Ensure only admins can access
+include('auth_check.php'); // This ensures only admins can access
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = mysqli_real_escape_string($conn, $_POST['title']);

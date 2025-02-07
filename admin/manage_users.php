@@ -1,13 +1,8 @@
 <?php
 session_start();
+session_start();
 include('../includes/db.php');
-include('auth_check.php');
-
-// Ensure the user is logged in and is an admin
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
-    header("Location: login.php");
-    exit();
-}
+include('auth_check.php'); // This ensures only admins can access
 
 // Fetch all users
 $users_sql = "SELECT * FROM users";
