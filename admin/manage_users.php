@@ -13,6 +13,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 $users_sql = "SELECT * FROM users";
 $users_result = $conn->query($users_sql);
 
+// Delete user
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
     $delete_sql = "DELETE FROM users WHERE id = ?";
@@ -64,9 +65,9 @@ if (isset($_GET['delete_id'])) {
             <tbody>
                 <?php while ($user = $users_result->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo $user['name']; ?></td>
-                        <td><?php echo $user['email']; ?></td>
-                        <td><?php echo ucfirst($user['role']); ?></td>
+                        <td><?php echo htmlspecialchars($user['name']); ?></td>
+                        <td><?php echo htmlspecialchars($user['email']); ?></td>
+                        <td><?php echo ucfirst(htmlspecialchars($user['role'])); ?></td>
                         <td>
                             <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                             <a href="?delete_id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>

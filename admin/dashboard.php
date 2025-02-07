@@ -1,10 +1,10 @@
 <?php
 session_start();
 include('../includes/db.php');
-include('auth_check.php');
+include('auth_check.php'); // Ensure authentication
 
-// Ensure the user is logged in and is an admin
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
+// Check if the user is logged in as an admin
+if (!isset($_SESSION['admin_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit();
 }
@@ -37,6 +37,11 @@ $latest_users_result = $conn->query($latest_users_sql);
 <body>
     <div class="container mt-5">
         <h2>Admin Dashboard</h2>
+
+        <?php if (isset($_SESSION['admin_name'])): ?>
+            <p>Welcome, <strong><?php echo htmlspecialchars($_SESSION['admin_name']); ?></strong></p>
+        <?php endif; ?>
+
         <div class="row">
             <!-- Total Users Card -->
             <div class="col-md-4">
@@ -66,7 +71,7 @@ $latest_users_result = $conn->query($latest_users_sql);
                         <ul class="list-group">
                             <?php while ($user = $latest_users_result->fetch_assoc()): ?>
                                 <li class="list-group-item">
-                                    <?php echo $user['name']; ?> (<?php echo $user['email']; ?>)
+                                    <?php echo htmlspecialchars($user['name']); ?> (<?php echo htmlspecialchars($user['email']); ?>)
                                 </li>
                             <?php endwhile; ?>
                         </ul>
@@ -74,15 +79,19 @@ $latest_users_result = $conn->query($latest_users_sql);
                 </div>
             </div>
         </div>
+
         <div class="row mt-4">
             <div class="col-md-4">
-                <a href="users/manage_users.php" class="btn btn-primary btn-block">Manage Users</a>
+                <a href="manage_users.php" class="btn btn-primary btn-block">Manage Users</a>
             </div>
             <div class="col-md-4">
                 <a href="manage_posts.php" class="btn btn-success btn-block">Manage Posts</a>
             </div>
         </div>
+
+        <a href="logout.php" class="btn btn-danger mt-3">Logout</a>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
