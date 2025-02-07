@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #f4450b;
+    padding: 20px;
+    text-align: left;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#top-title {
+    font-size: 16px;
+    color: #fff;
+    padding-left: 50%;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(128, 128, 128);
+}
+
+/* Title and Subtitle */
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #0056b3;
+}
+
+p {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Post List */
+.posts-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px);
+}
+
+.post-item h3 {
+    font-size: 20px;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.post-item p {
+    color: #666;
+}
+
+.post-item a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.post-item a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* CTA Section */
+.cta {
+    margin-top: 30px;
+}
+
+.cta .btn {
+    width: 200px;
+    text-align: center;
+}
+
+/* Footer */
+.footer-container {
+    background-color: #f4450b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 14px;
+}

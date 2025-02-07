@@ -1,0 +1,53 @@
+/* Admin Panel Styles */
+.admin-dashboard {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.admin-actions a {
+    margin: 10px;
+    background-color: #f4a261;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.admin-actions a:hover {
+    background-color: #e07b4e;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+.error {
+    color: red;
+}
+
+.create-post-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.create-post-container input, .create-post-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
