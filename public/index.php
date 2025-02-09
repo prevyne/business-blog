@@ -26,7 +26,7 @@ $posts_result = $conn->query($posts_sql);
      <p>Explore our latest blog posts below:</p>
      </div>
     
-    <div class="container mt-5">
+    <div class="container">
       <!-- Display Posts -->
         <div class="posts-list">
             <?php while ($post = $posts_result->fetch_assoc()): ?>

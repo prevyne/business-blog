@@ -1,3 +1,4 @@
+
 /* General Reset */
 * {
     margin: 0;
@@ -48,7 +49,7 @@ header nav ul li a {
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     background-color: rgb(128, 128, 128);
 }
 
@@ -73,6 +74,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: flex-start;
 }
 
 .post-item {

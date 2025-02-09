@@ -1,6 +1,6 @@
 <?php
-session_start();
-session_start();
+//session_start();
+
 include('../includes/db.php');
 include('auth_check.php'); // This ensures only admins can access
 

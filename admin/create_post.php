@@ -1,7 +1,9 @@
 <?php
 session_start();
 include('../includes/db.php');
-include('auth_check.php'); // This ensures only admins can access
+include('auth_check.php'); // Ensure only admins can access
+
+$user_id = $_SESSION['user_id']; // Get the logged-in user ID
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = mysqli_real_escape_string($conn, $_POST['title']);
@@ -31,9 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Insert into database
-    $sql = "INSERT INTO posts (title, content, image, created_at) VALUES ('$title', '$content', '$image', NOW())";
-    if ($conn->query($sql) === TRUE) {
+    // Insert into database with user_id
+    $sql = "INSERT INTO posts (user_id, title, content, image, created_at) VALUES (?, ?, ?, ?, NOW())";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('isss', $user_id, $title, $content, $image);
+
+    if ($stmt->execute()) {
         $_SESSION['message'] = "Post created successfully!";
         header("Location: manage_posts.php");
         exit();
