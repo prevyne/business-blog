@@ -37,8 +37,8 @@ $user = $user_result->fetch_assoc();
     </div>
     <div class="profile-info">
             <h4>Your Profile</h4>
-            <p>Name: <?php echo $user['name']; ?></p>
-            <p>Email: <?php echo $user['email']; ?></p>
+            <strong><p>Name:</strong> <?php echo $user['name']; ?></p>
+            <strong><p>Email:</strong> <?php echo $user['email']; ?></p>
         </div>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <header class="bg-dark text-white py-3">
         <nav class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <a href="../public/index.php">
+                <a href="../index.php">
                     <img src="../assets/images/logo.jpg" alt="Business Logo" width="50" class="rounded-circle">
                 </a>
                 <h1 class="ms-3 fs-4 mb-0">UNTOLD STORY GRAPHICS</h1>
@@ -19,7 +19,7 @@
 
             <ul class="nav">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link text-white">Home</a>
+                    <a href="../index.php" class="nav-link text-white">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="https://www.whatsapp.com/catalog/254796213473/?app_absent=0" class="nav-link text-white">Portfolio</a>

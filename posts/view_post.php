@@ -6,7 +6,7 @@ include('../includes/header.php');
 // Validate the post ID
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     $_SESSION['error'] = "Invalid post ID.";
-    header("Location: ../public/index.php");
+    header("Location: ../index.php");
     exit();
 }
 
@@ -46,7 +46,7 @@ if (!$post) {
 
         <p><?php echo nl2br(htmlspecialchars($post['content'])); ?></p>
 
-        <a href="../public/index.php" class="btn btn-primary mt-3">Back to Home</a>
     </div>
+    <center><a href="./index.php" class="btn btn-primary mt-3 mb-4">Back to Home</a></center>
 </body>
 </html>
